@@ -1,8 +1,8 @@
 (defproject csvmerge2flare "1.0.0"
   :description "utility to merge csv files into a d3 flare data structure"
-  :url "http://example.com/FIXME"
-  :license {:name "Eclipse Public License"
-            :url  "http://www.eclipse.org/legal/epl-v10.html"}
+  :url "https://github.com/kornysietsma/csvmerge2flare"
+  :license {:name "Apache 2.0"
+            :url  "http://www.apache.org/licenses/LICENSE-2.0"}
   :dependencies [[org.clojure/clojure "1.9.0"]
                  [clj-yaml "0.4.0"]
                  [org.clojure/tools.cli "0.3.5"]

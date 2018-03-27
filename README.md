@@ -5,6 +5,8 @@ A Clojure library designed to merge csv files such as those from code-maat with 
 I mostly use this for [code-maat](https://github.com/adamtornhill/code-maat) output processing,
 but I made it slightly general purpose so you can use it for other csv files if needed.
 
+This is one component in the tools I use to produce my [toxic code explorer visualisation](https://github.com/kornysietsma/toxic-code-explorer-demo)
+
 ## Usage
 
 The easiest way to run this without needing clojure is to use an uberjar -
