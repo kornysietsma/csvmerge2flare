@@ -10,7 +10,7 @@
     [["-b" "--base filename" "select a base flare-format json file for merging - if you don't specify a -b option, the program will try to read flare data from standard input for piping"]
      ["-i" "--input filename" "select an input csv file name"
       :validate [#(.exists (io/file %)) "Must be a valid file"]]
-     ["-c" "--category cat" "specify the category for the input data - data will be stored in 'node.data.<category>' in the flare JSON structure.  Defaults to the input filename with extensions stripped - you probably don't want that."]
+     ["-c" "--category cat" "specify the category for the input data - data will be stored in 'node.data.<category>' in the flare JSON structure."]
      ["-f" "--field f" "specify which field in a csv file represents the filename - defaults to 'entity' for code-maat files"
       :default "entity"]
 
@@ -30,9 +30,9 @@
           ""
           "Input files are expected to be csv files, similar to the output of code-maat: "
           ""
-          "language,filename,blank,comment,code"
-          "Clojure,src/code_sniff/cli.clj,7,1,81"
-          "Clojure,src/code_sniff/combine.clj,9,0,57"
+          "entity,age-months"
+          "project.clj,1"
+          "modules/incanter-svg/project.clj,1"
           ""
           "Output is a flare JSON file for D3 visualization"
           ""

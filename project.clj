@@ -1,4 +1,4 @@
-(defproject csvmerge2flare "0.1.0"
+(defproject csvmerge2flare "1.0.0"
   :description "utility to merge csv files into a d3 flare data structure"
   :url "http://example.com/FIXME"
   :license {:name "Eclipse Public License"
