@@ -34,13 +34,13 @@
     path))
 
 (defn merge-csv-with-json
-  [^Reader base-file ^Reader in-file ^Writer out-file category field]
+  [^Reader base-file ^Reader in-file ^Writer out-file root-path category field]
   (let [base-data (cheshire/parse-stream base-file true)]
   (as-> in-file x
       (csv/parse-csv x)
       (sc/process x)
       (convert x category field)
-      (flare/combine base-data x :update)
+      (flare/combine base-data x :update root-path)
       (cheshire/generate-stream x out-file {:pretty true})
       )
    ))

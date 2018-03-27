@@ -14,6 +14,8 @@
      ["-f" "--field f" "specify which field in a csv file represents the filename - defaults to 'entity' for code-maat files"
       :default "entity"]
 
+     ["-r" "--root r" "specify root in the flare file to merge to, e.g. 'src/java' to assume csv is relative to this dir"]
+
      ["-o" "--output filename" "select an output file name (default is STDOUT)"]
      ["-h" "--help"]])
 
@@ -62,9 +64,11 @@
                                   (io/reader (:base options))
                                   *in*)
             category (keyword (:category options))
-            field (keyword (:field options))]
+            field (keyword (:field options))
+            root (or (:root options) nil)
+            root-path (if (nil? root) [] (string/split root #"/"))]
         (try
-          (csv/merge-csv-with-json base-file in-file out-file category field )
+          (csv/merge-csv-with-json base-file in-file out-file root-path category field )
           (finally
             (if (:input options)
               (.close in-file))

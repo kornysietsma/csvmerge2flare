@@ -39,11 +39,11 @@
 
   (def filesep (re-pattern File/separator))
 
-  (defn- combinefn [combine-strategy flare {:keys [filename] :as file-data}]
-    (let [pathbits (clojure.string/split filename filesep)
+  (defn- combinefn [combine-strategy root-path flare {:keys [filename] :as file-data}]
+    (let [pathbits (concat root-path (clojure.string/split filename filesep))
           data (dissoc file-data :filename)]
       (update-in-flare flare pathbits data combine-strategy)))
 
   (defn combine "Combine file data into a Flare structure"
-    [flare files combine-strategy]
-    (reduce (partial combinefn combine-strategy) flare files))
+    [flare files combine-strategy root-path]
+    (reduce (partial combinefn combine-strategy root-path) flare files))
