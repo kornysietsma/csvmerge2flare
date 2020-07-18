@@ -1,3 +1,5 @@
+**ARCHIVED** this is part of my older code tools - see https://kornysietsma.github.io/polyglot-tools-docs/ for latest stuff.
+
 # csvmerge2flare
 
 A Clojure library designed to merge csv files such as those from code-maat with a flare nested json file.
